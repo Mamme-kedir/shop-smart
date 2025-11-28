@@ -36,10 +36,6 @@ npx serve .
 
 Then visit `http://localhost:8080` (or the port shown by your server).
 
-## Customization Tips
+## License MIT License. See `LICENSE` file for details.
 
-- Update `data/products.js` with real catalog information, imagery references, and pricing.
-- Extend the filter toolbar in `index.html` if new facets (sizes, colors, etc.) are needed.
-- The `styles/main.css` file organizes sections logically so components can be restyled or themed quickly.
-- Adjust the color tokens at the top of `styles/main.css` to fine-tune either theme, or extend the `[data-theme]` selectors for additional modes.
-- All logic lives in `scripts/app.js`; consider modularizing it further if the catalog grows.
+MIT License. See `LICENSE` file for details.
