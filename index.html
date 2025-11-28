@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart - Modern Ecommerce</title>
+    <meta name="description" content="Shop modern essentials across lifestyle, home, and tech with fast shipping and curated collections.">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <noscript class="noscript">This ecommerce experience requires JavaScript for product filtering and cart features.</noscript>
+    <div class="page-shell">
+        <header class="site-header" aria-label="Main">
+            <div class="brand">
+                <span class="logo-dot"></span>
+                <span class="brand-text">ShopSmart</span>
+            </div>
+            <nav class="primary-nav" aria-label="Primary navigation">
+                <a href="#collections">Collections</a>
+                <a href="#catalog">Catalog</a>
+                <a href="#support">Support</a>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false" aria-label="Toggle color theme">
+                    <span class="theme-toggle-track">
+                        <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">&#9728;</span>
+                        <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">&#9790;</span>
+                        <span class="theme-toggle-thumb"></span>
+                    </span>
+                </button>
+                <button class="ghost" id="track-order" type="button">Track Order</button>
+                <button class="pill" id="cart-toggle" type="button" aria-expanded="false" aria-controls="cart-drawer">
+                    <span>Cart</span>
+                    <span class="badge" id="cart-count">0</span>
+                </button>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero" id="hero">
+                <div class="hero-content">
+                    <p class="eyebrow">Winter 2025 Drop</p>
+                    <h1>Effortless essentials, delivered fast.</h1>
+                    <p>Discover design-forward gear across lifestyle, home, and tech curated by our team. Carbon-neutral shipping on every order.</p>
+                    <div class="hero-cta">
+                        <button class="pill primary" id="shop-now" type="button">Shop New Arrivals</button>
+                        <button class="ghost" id="view-best-sellers" type="button">View Best Sellers</button>
+                    </div>
+                    <dl class="hero-stats">
+                        <div>
+                            <dt>1,200+</dt>
+                            <dd>Products curated</dd>
+                        </div>
+                        <div>
+                            <dt>48h</dt>
+                            <dd>Average delivery</dd>
+                        </div>
+                        <div>
+                            <dt>4.9/5</dt>
+                            <dd>Customer rating</dd>
+                        </div>
+                    </dl>
+                </div>
+                <div class="hero-card">
+                    <p>Members save an extra 10% on seasonal bundles.</p>
+                    <ul>
+                        <li>Same-day fulfillment before 2pm</li>
+                        <li>Hassle-free 30-day returns</li>
+                        <li>Dedicated product stylists</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="collection-highlights" id="collections" aria-label="Featured collections">
+                <article>
+                    <p class="eyebrow">Smart Living</p>
+                    <h3>Connected Home</h3>
+                    <p>Automate comfort with adaptive lighting, air, and audio kits.</p>
+                </article>
+                <article>
+                    <p class="eyebrow">Creative Work</p>
+                    <h3>Studio Ready</h3>
+                    <p>Ergonomic desks, task lighting, and acoustic upgrades.</p>
+                </article>
+                <article>
+                    <p class="eyebrow">Out & About</p>
+                    <h3>Weekend Escape</h3>
+                    <p>Carry-ons, travel apparel, and compact tech for every trip.</p>
+                </article>
+            </section>
+
+            <section class="catalog" id="catalog" aria-label="Product catalog">
+                <header class="catalog-toolbar">
+                    <div class="toolbar-group">
+                        <label for="category-filter">Category</label>
+                        <select id="category-filter">
+                            <option value="all">All</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-group">
+                        <label for="price-range">Max Price: <span id="price-value"></span></label>
+                        <input type="range" id="price-range" min="0" max="500" value="500" step="10">
+                    </div>
+                    <div class="toolbar-group">
+                        <label for="sort-by">Sort</label>
+                        <select id="sort-by">
+                            <option value="featured">Featured</option>
+                            <option value="price-asc">Price: Low to High</option>
+                            <option value="price-desc">Price: High to Low</option>
+                            <option value="rating">Top Rated</option>
+                            <option value="new">Newest</option>
+                        </select>
+                    </div>
+                    <div class="toolbar-group">
+                        <label for="search-input">Search</label>
+                        <input id="search-input" type="search" placeholder="Search products" autocomplete="off">
+                    </div>
+                    <button class="ghost" id="filters-reset" type="button">Reset Filters</button>
+                </header>
+
+                <div class="chip-row" id="tag-chips" role="group" aria-label="Tag filters"></div>
+
+                <div class="product-grid" id="product-grid" aria-live="polite"></div>
+                <div class="empty-state" id="empty-state" hidden>
+                    <p>No products match those filters. Try clearing tags or increasing the price range.</p>
+                </div>
+            </section>
+
+            <section class="support" id="support" aria-label="Support and policies">
+                <div>
+                    <p class="eyebrow">We're here to help</p>
+                    <h2>Concierge support 7 days a week.</h2>
+                    <p>Chat with a product stylist, manage returns, or get shipping updates in minutes. Average response time under 2 minutes.</p>
+                </div>
+                <div class="support-actions">
+                    <button class="pill primary" type="button">Chat with us</button>
+                    <button class="ghost" type="button">Email support</button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+        <div class="cart-header">
+            <div>
+                <p class="eyebrow">Your Cart</p>
+                <strong id="cart-item-count">0 items</strong>
+            </div>
+            <button class="icon" id="cart-close" type="button" aria-label="Close cart">&times;</button>
+        </div>
+        <div class="cart-body">
+            <ul id="cart-items" class="cart-items" aria-live="polite"></ul>
+            <p class="cart-empty" id="cart-empty-msg">Your cart is empty. Add something you love.</p>
+        </div>
+        <footer class="cart-footer">
+            <div>
+                <span>Subtotal</span>
+                <strong id="cart-total">$0.00</strong>
+            </div>
+            <button class="pill primary" id="checkout" type="button">Checkout</button>
+        </footer>
+    </aside>
+    <div class="scrim" id="cart-scrim" hidden></div>
+
+    <template id="product-card-template">
+        <article class="product-card">
+            <div class="product-media">
+                <span class="badge badge-new" hidden>New</span>
+                <span class="badge badge-low" hidden>Low stock</span>
+            </div>
+            <div class="product-body">
+                <div class="product-meta">
+                    <p class="eyebrow product-category"></p>
+                    <p class="product-rating"></p>
+                </div>
+                <h3 class="product-title"></h3>
+                <p class="product-desc"></p>
+                <div class="product-footer">
+                    <strong class="product-price"></strong>
+                    <button class="pill primary add-to-cart" type="button">Add to Cart</button>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <template id="cart-item-template">
+        <li class="cart-item">
+            <div>
+                <p class="cart-item-title"></p>
+                <p class="cart-item-meta"></p>
+            </div>
+            <div class="cart-item-actions">
+                <label>
+                    Qty
+                    <input type="number" class="cart-item-qty" min="1" max="10">
+                </label>
+                <button type="button" class="ghost cart-item-remove">Remove</button>
+            </div>
+        </li>
+    </template>
+
+    <script src="data/products.js"></script>
+    <script src="scripts/app.js" defer></script>
+</body>
+</html>
